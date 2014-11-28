@@ -102,7 +102,7 @@ class it_equipment(osv.osv):
         default.update({
             'pin': _get_pin,
         })
-        return super([it.equipment], self).copy(cr, uid, id, default, context=context)`
+        return super([it_equipment], self).copy(cr, uid, id, default, context=context)`
 
 
     _columns = {
