@@ -97,13 +97,17 @@ class it_equipment(osv.osv):
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
     def copy(self, cr, uid, id, default={}, context=None):
+        context = context or {}
+        longitud = 12
+        valores = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<=>@#%&+"
+        p = ""
+        p = p.join([choice(valores) for i in range(longitud)])
         if not default:
             default = {}
         default.update({
-            'pin': _get_pin,
+            'pin': p,
         })
-        return super([it_equipment], self).copy(cr, uid, id, default, context=context)`
-
+        return super(it_equipment, self).copy(cr, uid, id, default, context=context)
 
     _columns = {
 
