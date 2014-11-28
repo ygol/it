@@ -96,6 +96,14 @@ class it_equipment(osv.osv):
         image_path = get_module_resource('it', 'static/description/', 'default_image_equipment.png')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
+    def copy(self, cr, uid, id, default={}, context=None):
+        if not default:
+            default = {}
+        default.update({
+            'pin': _get_pin,
+        })
+        return super([it.equipment], self).copy(cr, uid, id, default, context=context)`
+
 
     _columns = {
 
