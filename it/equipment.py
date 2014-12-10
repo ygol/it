@@ -156,6 +156,7 @@ class it_equipment(osv.osv):
         'function_firewall': fields.boolean('Firewall & Proxy Server'),
         'function_dhcp': fields.boolean('DHCP Server'),
         'function_ap': fields.boolean('Access Point'),
+        'function_did': fields.boolean('DiD'),
 
         # Audit Page
         'creation_date': fields.date('Creation Date',readonly=True),
@@ -178,6 +179,13 @@ class it_equipment(osv.osv):
         'virtual_disk_amount': fields.char('Disk Size'),
         'virtual_processor_amount': fields.char('Number of Processor'),
         'virtual_network_amount': fields.char('Number of Network'),
+        'virtuel_id': fields.char('Id'),
+        'virtuel_type': fields.char('Type'),
+        'virtual_vmid': fields.char('VmID'),
+        'virtual_template': fields.char('Template'),
+        'virtual_ip': fields.char('IP Address'),
+        'virtual_hostname': fields.char('Hostname'),
+
 
         # Partition Page
         'partitions_ids': fields.one2many('it.equipment.partition','equipment_id','Partition on this equipment'),
@@ -207,6 +215,13 @@ class it_equipment(osv.osv):
         'dc_user_ids': fields.one2many('it.equipment.dcuser','equipment_id','Users'),
         'dc_group_ids': fields.one2many('it.equipment.dcgroup','equipment_id','Groups'),
 
+        # DiD Page
+        'did_prefix': fields.char('Prefix'),
+        'did_city': fields.char('Country, City'),
+        'did_price': fields.float('Monthly Price'),
+        'did_curr': fields.char('Currency'),
+        'did_mapping': fields.char('Mapping'),
+        
         # Fileserver Page
         'equipment_mapping_ids': fields.one2many('it.equipment.mapping','equipment_id','Mappings'),
 

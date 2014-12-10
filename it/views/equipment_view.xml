@@ -170,6 +170,9 @@
                                         <field name="contract_owner"/>
                                         <field name="contract_nif"/>
                                         <field name="contract_direction"/>
+                                        <field name="did_price"/>
+                                        <field name="did_curr"/>
+                                        
                                     </group>
                                 </group>
                             </page>
@@ -215,6 +218,14 @@
                             <page string="File Server" attrs="{'invisible':[('function_fileserver','=', False )]}">
                                 <group>
                                     <field name="equipment_mapping_ids" nolabel="1" colspan="4"/>
+                                </group>
+                            </page>
+                            <page string="DiD" attrs="{'invisible':[('function_did','=', False )]}">
+                                <group>
+                                    <field name="did_prefix"/>
+                                    <field name="did_city"/>
+                                    <field name="did_mapping"/>
+                                    
                                 </group>
                             </page>
                             <page string="Domain Controller" attrs="{'invisible':[('function_dc','=', False )]}">
@@ -380,6 +391,7 @@
                                         <field name="function_firewall"/>
                                         <field name="function_dhcp"/>
                                         <field name="function_ap"/>
+                                        <field name="function_did"/>
                                     </group>
                                 </group>
                             </page>
