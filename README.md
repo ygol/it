@@ -1,4 +1,4 @@
-# ODOO INFRASTRUCTURE MODULE [v8]
+# ODOO INFRASTRUCTURE MODULE [v9 in progress]
 
 This module is used for Infrastructure management. You can registry several types of equipments, access, backups and applications.
 
