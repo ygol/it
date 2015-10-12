@@ -110,6 +110,9 @@
                                     <field name="backup_count" widget="statinfo"/>
                         </button>
                     </div>
+                    <field name="category_id" position="after">
+                        <field name="manage_it"/>
+                    </field>
                 </data>
             </field>
         </record>
