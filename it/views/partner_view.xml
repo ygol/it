@@ -84,7 +84,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//div[@name='buttons']" position="inside">
+                    <div name="button_box" position="inside">
                         <button name="%(act_partner_2_equipment)d"
                                 class="oe_inline oe_stat_button"
                                 icon="fa-th-large"
@@ -109,7 +109,10 @@
                                 attrs="{'invisible':[('manage_it','=', False )]}">
                                     <field name="backup_count" widget="statinfo"/>
                         </button>
-                    </xpath>
+                    </div>
+                    <field name="category_id" position="after">
+                        <field name="manage_it"/>
+                    </field>
                 </data>
             </field>
         </record>
